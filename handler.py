@@ -20,11 +20,14 @@ def hello(event, context):
         message = str(data["message"]["text"])
         chat_id = data["message"]["chat"]["id"]
 
-        response = "Hey! Use the /motivateMe command to get some inspiration!"
+        response = "Hey! Use the /motivate command to get some inspiration!"
 
-        if "/motivateMe" in message:
+        if "/motivate" in message:
             quote = random.choice(quote_list)
             response = '"%s" - %s' % (quote['quote'], quote['author'])
+
+        if "/status" in message:
+            response = "Motivating people since June 13th 2018!"
 
         data = {"text": response.encode("utf8"), "chat_id": chat_id}
         url = BASE_URL + "/sendMessage"
