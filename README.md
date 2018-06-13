@@ -3,6 +3,8 @@ A Telegram bot that gives you some motivation.
 Built using Python3, AWS Lambda and [Serverless](https://serverless.com/).
 
 The motivation quotes are stored in the `quote_list.py` file.
+Commands can be modified in the `handler.py` file.
+Modification of the bot's settings can be done via the [@BotFather](https://web.telegram.org/#/im?p=@BotFather).
 
 ## Live Demo
 
