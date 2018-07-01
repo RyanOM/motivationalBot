@@ -2,7 +2,6 @@ import json
 import os
 import sys
 import random
-import logging
 
 from quote_list import quote_list
 
@@ -33,9 +32,9 @@ def hello(event, context):
         data = {"text": response.encode("utf8"), "chat_id": chat_id}
         url = BASE_URL + "/sendMessage"
         requests.post(url, data)
-        logging.info(response)
+        print(response)
 
     except Exception as e:
-        logging.error(e)
+        print(e)
 
     return {"statusCode": 200}
